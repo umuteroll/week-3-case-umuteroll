@@ -5,8 +5,19 @@ import Label            from '../../components/label';
 import SocialButton     from '../../components/socialButtons';
 import backgroundImage  from '../../resources/backgroundImage.png';
 import bigVespa         from '../../resources/bigVespa.png';
+import { useState }     from 'react';
 
 function RegisterPage() {
+
+    const [form, setForm] = useState({ email: "", password: "" ,passwordAgain: ""});
+    const inputhandleChange = (event) => {
+        setForm({ ...form, [event.target.name]: event.target.value });
+    };
+
+
+
+
+
     return (
         <div className={styles.container}>
             <img className={styles.backgroundImage} src={backgroundImage} alt="backAvatar" />
@@ -21,19 +32,24 @@ function RegisterPage() {
                     <Input
                         label={"Email"}
                         type={"text"}
+                        name='email'
+                        onChange={inputhandleChange}
 
                     />
                     <Label label="Password" />
                     <Input
                         label={"Password"}
                         type={"password"}
+                        name='password'
+                        onChange={inputhandleChange}
 
                     />
                      <Label label="Password Again" />
                     <Input
                         label={"Password"}
                         type={"password"}
-
+                        name='passwordAgain'
+                        onChange={inputhandleChange}
                     />
                     <Link to="/login">
                         <span className={styles.linkSpan}>Do you have an account? Sign In</span>
@@ -48,7 +64,7 @@ function RegisterPage() {
                     <div className={styles.socials}>
                         <SocialButton />
                     </div>
-
+                    <div>{JSON.stringify(form)}</div>
                 </div>
 
             </div>
