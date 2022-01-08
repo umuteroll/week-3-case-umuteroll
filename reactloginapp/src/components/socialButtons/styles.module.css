@@ -1,0 +1,11 @@
+.button {
+    width: 125px;
+    height: 50px;
+    left: calc(50% - 125px/2 - 421.5px);
+    top: calc(50% - 50px/2 + 214px);
+    background: #FFFFFF;
+    border: 1px solid #BCBEC0;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding-top:12px ;
+}

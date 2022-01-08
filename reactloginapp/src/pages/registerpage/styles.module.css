@@ -1,0 +1,118 @@
+
+body {
+    width: 1920px; 
+    height: 1080px;
+    margin-top: 0%;
+    margin-left: 0%;
+}
+
+.container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    margin: 0px 0px;
+    background: linear-gradient(90deg, #00B4DB 0%, #0083B0 100%);
+}
+
+.card {
+    position: absolute;
+    width: 1496px;
+    height: 849px;
+    left: 11%;
+    top: 10%;
+    background: #FFFFFF;
+    border-radius: 40px;
+}
+
+.form {
+    font-family: 'Poppins', sans-serif;
+    margin: 98px 969px 126px 126px;
+    width: 401px;
+    height: 595px;
+}
+
+.avatar {
+    position: absolute;
+    width: 1132px;
+    height: 849px;
+    left: calc(50% - 1132px/2 + 182px);
+    top: calc(50% - 849px/2 - 0.5px);
+}
+
+.title {
+    display: flex;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+
+}
+
+.subTitle {
+    display: flex;
+    font-size: 24px;
+    line-height: 29px;
+    color: #465685;
+    justify-content: flex-start;
+}
+.backgroundImage {
+    width: 940px;
+    height: 1080px;
+    left: -230px;
+    margin-right: 1000px;
+    top: 0px;
+    }
+.linkSpan{
+    height: 16px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 8px;
+    color: #414042;
+    display: inline;
+    vertical-align: start;
+    float: left;
+}
+.button {
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    left: calc(50% - 400px/2 - 421px);
+    top: calc(50% - 50px/2 + 87px);
+    margin-top: 80px;
+    background: #A93159;
+    border-radius: 40px;
+}
+.buttonText {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 163.8%;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+
+}
+.span{
+    display: flex;
+    font-family: Gilroy;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+    margin: 155px 0px 25px 0px;
+    width:200px ;
+    margin-left: 140px;
+}
+.socials{
+    justify-content: space-between;
+    display: flex;
+
+}
+.bigVespa {
+ position: absolute;
+width: 1132px;
+height: 849px;
+left: calc(50% - 1132px/2 + 182px);
+top: calc(50% - 849px/2 - 0.5px);
+border-radius: 40px;
+}
