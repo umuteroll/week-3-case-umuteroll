@@ -5,7 +5,7 @@ import Label from '../../components/label';
 import SocialButton from '../../components/socialButtons';
 import backgroundImage from '../../resources/backgroundImage.png';
 import bigVespa from '../../resources/bigVespa.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function LoginPage() {
     // codelar burada
@@ -13,8 +13,57 @@ function LoginPage() {
     const inputhandleChange = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
     };
-  
+
+    const [isClick, setIsClick] = useState(false) 
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
     
+    const onClickRegister = () => {
+        if (!validateForm()) {
+            alert("Please fill all fields");
+            return;
+        }
+        setIsClick(true);
+        
+    };
+    const validateForm = () => {
+        if (form.password === "" || form.email === "" || form.password === undefined || form.email === undefined) {
+            return false;
+        }
+        return true;
+    };
+    useEffect(() => {
+        fetch('https://61d9e7dfce86530017e3cc95.mockapi.io/users')
+          .then(res => res.json())
+          .then(
+            (result) => {
+              setIsLoaded(true);
+              setItems(result);
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+              setIsLoaded(true);
+            }
+          )
+      }, [isClick]);
+
+      useEffect(() => {
+        const email  = items.filter(items => items.email === form.email);
+        const password = items.filter(items => items.password === form.password);
+          if(email&&password){
+            alert("Login Successful");
+            setIsClick(false);
+            setIsLoaded(false);
+            loginToApp();
+          }
+      }, [isLoaded]);
+    
+    const loginToApp = () => {
+        <Link to="/main">   
+         </Link>
+    }
 
 
 
@@ -48,11 +97,9 @@ function LoginPage() {
                         <span className={styles.linkSpan}>Don't have an account yet? Register for free</span>
                     </Link>
 
-                    <Link to="/login">
-                        <button className={styles.button}>
+                        <button className={styles.button} onClick={onClickRegister}>
                             <span className={styles.buttonText}>Sign In</span>
                         </button>
-                    </Link>
                     <span className={styles.span}>Or continue with it</span>
                     <div className={styles.socials}>
                         <SocialButton />
